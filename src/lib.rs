@@ -33,11 +33,6 @@ impl Preprocessor for LastChanged {
                 };
                 log::debug!("Repository URL: {}", url);
 
-                if !url.contains("github.com") {
-                    log::trace!("git-repository-url is not a GitHub URL: {url:?}");
-                    return Ok(book);
-                }
-
                 Some(&url)
             }
             None => None,
